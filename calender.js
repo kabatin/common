@@ -25,7 +25,7 @@ function CallCalender(ctl)
 
     html += "</tr><tr>";
     for (var i = 0; i < week; i++)
-        html += '<td width="18">&nbsp;</td>';
+        html += '<td width="18" style="background-color:' + _color[i] + ';">&nbsp;</td>';
 
     var count = week;
     var maxDay = new Date(year, month, 0).getDate();
@@ -40,17 +40,18 @@ function CallCalender(ctl)
         count++;
     }
     for (var i = count; i < 7; i++)
-        html += '<td width="18">&nbsp;</td>';
+        html += '<td width="18" style="background-color:' + _color[i] + ';">&nbsp;</td>';
 
     html += "</tr></table>";
 
-    var x = _ctl.offsetLeft;
-    var y = _ctl.offsetTop;
+    var bounds = _ctl.getBoundingClientRect();
+    var x = bounds.left;
+    var y = bounds.top;
 
     var calender = document.getElementById("calender");
     calender.innerHTML = html;
-    calender.style.left = x;
-    calender.style.top = y + 21;
+    calender.style.left = x + "px";
+    calender.style.top = (y + 21) + "px";
 }
 
 function SetMonth(addMonth)
