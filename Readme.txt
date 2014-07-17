@@ -8,6 +8,9 @@ UPDATE Ver*.** - ****/**/**
 ■利用したいページで「calender.js」を読み込む
 <script src="calender.js" type="text/javascript"></script>
 
+■カレンダー表示用DIVタグをページ内にセット
+<div id="calender" style="position:absolute;"></div>
+
 ■埋め込みたいテキストボックスコントロールに対してonfocusにてコールする
 <input type="text" id="date" size="20" onfocus="CallCalender(this);" />
 
